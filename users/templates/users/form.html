@@ -1,0 +1,17 @@
+{% load crispy_forms_tags %}
+
+
+    <div class="my-5 py-5">
+    <div class="row">
+        <div class="col-10 col-sm-8 col-md-6 col-lg-4  mx-auto shadow shadow-lg p-4 ">
+    <form method="POST">
+        <legend>{{ title }}</legend>
+        <div class="mb-3">
+            {% csrf_token%} 
+            {{ form|crispy }}
+        </div>
+        <button class="btn btn-sm btn-dark" type="submit">{{ title }}</button>
+    </form>
+    </div>
+    </div>
+
