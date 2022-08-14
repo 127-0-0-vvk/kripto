@@ -16,12 +16,11 @@
     h1 {
   color: rgb(34, 34, 34);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 100px;
-  width:500px;
+  font-size: 50px;
     margin: 0 auto;
     text-align: center;
     padding: 50px ;
-}
+   }
 
 
 .main-container {
@@ -64,8 +63,8 @@
 .card {
   margin: 20px;
   padding: 10px;
-  width: 500px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   display: grid;
   grid-template-rows: 20px 50px 1fr 50px;
   border-radius: 10px;
@@ -156,9 +155,10 @@
 
   <body>
     <div class="container">
+    {% if user.is_authenticated %}
     {% include "core/navbar.html" %}  
     {% include "core/messages.html" %} 
-
+ 
     {% block content %}
     <div class="main-container">
         <div class="heading">
@@ -216,6 +216,11 @@
         </div>
       </div>
     {% endblock content %}
+
+    {% else %}
+
+    <h1>ERROR 404 not Found</h1>
+    {% endif %}
            
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

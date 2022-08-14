@@ -1,10 +1,5 @@
 
  <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,9 +28,9 @@ h3 {
 }
     </style>
     <body>
+      
         {% include "core/navbar.html" %}  
         {% include "core/messages.html" %} 
-
         <div>
             {% if user.is_authenticated %}
             {% block content%}
@@ -72,11 +67,14 @@ h3 {
   </div>
   <!-- TradingView Widget END -->
 
-  <rssapp-wall id="tBWqtPhbG989ROHe"></rssapp-wall><script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
+  <div class="cryptohopper-web-widget" data-id="5"></div>
+  <script src="https://www.cryptohopper.com/widgets/js/script"></script>
 
 
             {% endblock content %}
             {% else %}
+
+            <h1>ERROR 404 not Found</h1>
             {% endif %}
         </div>
         

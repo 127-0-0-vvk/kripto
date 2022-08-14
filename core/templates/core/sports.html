@@ -1,4 +1,3 @@
-{% extends "core/base.html" %}
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -24,16 +23,21 @@ padding: 10px ;
     </style>
     <body>
         <div>
-            {% block content%}
+          
             <div>
+                {% if user.is_authenticated %}
+                {% block content %}
                 
              <h1> SPORTS</h1>
              <rssapp-ticker id="tF50R6vajAA7qaj9"></rssapp-ticker><script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
 
              <rssapp-imageboard id="tF50R6vajAA7qaj9"></rssapp-imageboard><script src="https://widget.rss.app/v1/imageboard.js" type="text/javascript" async></script>
+             {% endblock content %}
+             {% else %}
+
+            <h1>ERROR 404 not Found</h1>
+            {% endif %}
             
-            
-            {% endblock content %}
         </div>
     </div>
         
