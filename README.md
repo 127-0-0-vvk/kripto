@@ -1,1 +1,1 @@
-# kripto
+# NewsRadar
